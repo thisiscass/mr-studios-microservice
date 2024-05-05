@@ -7,15 +7,7 @@ enum PlaceType {
     audioVisualStudio = 'AudioVisualStudio' 
 }
 
-interface IMapsService {
-    getNearestPlaces: (latitude: string, longitude: string, radius: number, placeType: PlaceType) => Promise<Place[]>
-}
+const getNearestPlaces = (latitude: string, longitude: string, radius: number, placeType: PlaceType): Promise<Place[]> => 
+    Promise.resolve(new Array<Place>());
 
-class MapsService implements IMapsService {
-    async getNearestPlaces(latitude: string, longitude: string, radius: number, placeType: PlaceType) {
-        return Promise.resolve([]);
-    }
-
-}
-
-export { PlaceType, IMapsService, MapsService }
+export { PlaceType, getNearestPlaces }
